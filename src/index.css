@@ -1,13 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto', 'Oxygen', 'Segoe UI', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h3, h4, p {
+  margin: 0;
+}
+
+.main-app {
+  display: flex;
+  gap: 1.5rem;
+  height: 100dvh;
+  background: #f7f7f7;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+@media (max-width: 968px) {
+  .main-app {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-app {
+    flex-direction: column;
+    overflow: auto;
+  }
 }
