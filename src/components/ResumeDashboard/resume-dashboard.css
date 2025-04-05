@@ -1,63 +1,63 @@
 .resume-dashboard {
-    display: flex;
-    flex: 1;
-    padding: 1.5rem 1.5rem 1.5rem 0;
+  display: flex;
+  flex: 1;
+  padding: 1.5rem 1.5rem 1.5rem 0;
 }
 
 .dasboard-section {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    gap: 1.5rem;
-    padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 1.5rem;
+  padding: 1.5rem;
 }
 
 .user-card-section {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    gap: 1.25rem;
-    overflow: auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 1.25rem;
+  overflow: auto;
 }
 
 .no-preview {
-    display: flex;
-    flex-direction: column;
-    place-items: center;
-    gap: 1.25rem;
-    padding: 3rem 1.5rem;
-    border: 2px dashed #e4e4e7;
-    border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  gap: 1.25rem;
+  padding: 3rem 1.5rem;
+  border: 2px dashed #e4e4e7;
+  border-radius: 0.5rem;
 }
 
 .no-preview svg {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 .no-preview h4 {
-    font-size: 1.125rem;
-    font-weight: 500;
+  font-size: 1.125rem;
+  font-weight: 500;
 }
 
 .no-preview span {
-    font-size: 0.875rem;
-    text-align: center;
-    color: #71717a;
+  font-size: 0.875rem;
+  text-align: center;
+  color: #71717a;
 }
 
 @media (max-width: 968px) {
-    .resume-dashboard {
-        padding: 1rem 1rem 1rem 0;
-    }
+  .resume-dashboard {
+    padding: 1rem 1rem 1rem 0;
+  }
 
-    .dasboard-section {
-        padding: 1rem;
-        gap: 1rem;
-    }
+  .dasboard-section {
+    padding: 1rem;
+    gap: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
-    .resume-dashboard {
-        padding: 0 1rem 1rem;
-    }
+  .resume-dashboard {
+    padding: 0 1rem 1rem;
+  }
 }

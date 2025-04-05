@@ -1,44 +1,38 @@
-import React, { useEffect, useState } from 'react';
-import { config } from './config';
-import { SnackbarProvider } from './context/SnackbarContext';
-import ResumeControlPanel from './components/ResumeControlPanel/ResumeControlPanel';
-import ResumeDashboard from './components/ResumeDashboard/ResumeDashboard';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { SnackbarProvider } from "./context/SnackbarContext";
+import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
+import Navbar from "./components/Navbar/Navbar";
+import SignInPage from "./pages/SignIn";
+import SignUpPage from "./pages/SignUp";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import NotFoundPage from "./pages/NotFound";
 
 function App() {
-  const [resumes, setResumes] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  const fetchResumes = async() => {
-    try {
-      setLoading(true);
-      const response = await fetch(`${config.url.RESUMES}`);
-
-      if (!response.ok) {
-        throw new Error(`Error fetching resumes: ${response.statusText}`);
-      }
-
-      const data = await response.json();
-      setResumes(data.resumes);
-      setLoading(false);
-    } catch (error) {
-      console.error('Failed to fetch resumes:', error);
-      setLoading(false);
-    }
-  }
-
-  useEffect(() => {
-    fetchResumes();
-
-  }, [])
-  
-
   return (
-    <main className="main-app">
+    <BrowserRouter>
       <SnackbarProvider>
-        <ResumeControlPanel setResumes={setResumes}/>
-        <ResumeDashboard loading={loading} resumes={resumes} setResumes={setResumes} />
+        <Navbar />
+        <Routes>
+          {/* Public Routes */}
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/sign-in" element={<SignInPage />} />
+          <Route path="/sign-up" element={<SignUpPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+
+          {/* Protected Route */}
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
       </SnackbarProvider>
-    </main>
+    </BrowserRouter>
   );
 }
 

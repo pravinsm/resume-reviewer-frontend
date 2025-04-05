@@ -1,0 +1,52 @@
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 2555, 0.8);
+  border-bottom: 1px solid #e4e4e7;
+  backdrop-filter: blur(12px);
+  z-index: 100;
+}
+
+nav .container {
+  display: flex;
+  place-content: space-between;
+}
+
+.logo {
+  display: flex;
+  place-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo h5 {
+  font-family: "Teko";
+  font-weight: 600;
+}
+
+.nav-items {
+  display: flex;
+  gap: 1.25rem;
+  place-items: center;
+}
+
+.nav-button {
+  padding: 6px 12px !important;
+  font-size: 14px !important;
+  line-height: normal !important;
+  text-transform: capitalize !important;
+  border-radius: 6px !important;
+  min-width: max-content !important;
+  border: 1px solid #171717 !important;
+  color: #171717 !important;
+}
+
+.nav-button:hover {
+  background: whitesmoke;
+}
+
+.user-button {
+  width: 34px;
+  height: 34px;
+}

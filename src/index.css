@@ -1,25 +1,64 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap");
 
 body {
   margin: 0;
-  font-family: 'Roboto', 'Oxygen', 'Segoe UI', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: "Roboto", "Oxygen", "Segoe UI", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-h3, h4, p {
+h3,
+h4,
+p {
   margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .main-app {
   display: flex;
+  flex: 1;
   gap: 1.5rem;
-  height: 100dvh;
+  padding-top: 65px;
+}
+
+.main-app.dashboard {
   background: #f7f7f7;
+}
+
+.container {
+  max-width: 96rem;
+  margin: 0 auto;
+  padding: 16px;
 }
 
 .flex-1 {
   flex: 1;
+}
+
+/* responsive handling */
+@media (max-width: 1536px) {
+  .container {
+    max-width: 80rem;
+  }
+}
+
+@media (max-width: 1280px) {
+  .container {
+    max-width: 64rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 48rem;
+  }
 }
 
 @media (max-width: 968px) {
@@ -32,5 +71,15 @@ h3, h4, p {
   .main-app {
     flex-direction: column;
     overflow: auto;
+  }
+
+  .container {
+    max-width: 40rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    max-width: none;
   }
 }
